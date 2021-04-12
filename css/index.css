@@ -5,11 +5,16 @@
 }
 
 .menu-list{
-    margin-top: 50px;
+    margin-top: 90px;
+}
+
+
+.img-head{
+    padding: 30px;
 }
 
 .fas{
-    color: #fff;
+    color: #363636;
 }
 
 .navbar{
@@ -17,15 +22,12 @@
 }
 
 .search{
-    margin-top: 20px;
+    width: 80vh;
+    padding: 30px;
 }
 
 li{
-    margin-top: 30px;
-}
-
-a:hover{
-    color: rgb(99, 99, 99);
+    margin-top: 20px;
 }
 
 body{
@@ -36,8 +38,9 @@ body{
 }
 
 .hero{
-    width: 70%;
+    width: 100%;
     display: inline-flex;
+    justify-content: center;
 }
 
 .title{
@@ -45,32 +48,29 @@ body{
 }
 
 .container{
-    width: 90%;
-    height: 90vh;
+    width: 80%;
+    height: 120vh;
     border-radius: 12px;
     margin-left: 16%;
-    margin-top: -600px;
+    padding-left: 2rem;
+    margin-top: -650px;
     flex-direction: column;
-    position:absolute;
-    background-color:#14141f;
-}
-
-b-field{
-    background-color: #000;
+    background-color:#363636;
 }
 
 .btnsalva{
-    background-color: green;
+    background-color: #4ecca3;
     color: snow;
     float: right;
     margin-top: -70px;
+    margin-right: 220px;
 }
-
 
 .name{
    display: inline-flex;
    flex-direction: column;
    width: 40%;
+   color: whitesmoke;
 }
 
 .email{

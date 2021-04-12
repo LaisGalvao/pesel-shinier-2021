@@ -14,61 +14,54 @@
 <div id="app" >
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <b-field>
-            <!--<img src="images/analytics.jpg" alt="">-->
-            <b-input placeholder="Buscar funcionalidade.." class="search"></b-input>
+            <img src="images/analytics.png" alt="Analytics" class="img-head">
+            <b-input placeholder="Buscar funcionalidade.." 
+            class="search"></b-input>
         </b-field>
     </nav>
     <aside class="menu">
+        
         <ul class="menu-list">
           <li><a><i class="fas fa-home"></i> Dashboard</a></li>
           <li><a><i class="fas fa-users"></i> Grupos</a></li>
-          <li><a><i class="fas fa-user"></i> Usuários</a></li>
+          <li><a href="#"><i class="fas fa-user"></i> Usuários</a></li>
           <li><a><i class="fas fa-atom"></i> Sistemas</a></li>
           <li><a><i class="fas fa-sitemap"></i> Categoria</a></li>
         </ul>
     </aside>
 
-            <div class="container">
-                             
+
+        <div class="container">
             <section class="hero">
                 <div class="hero-body">
                 <p class="title">
                     Cadastrar novo usuário
                 </p>
                 <b-field>  
-                    <b-button class="btnsalva">Salvar</b-button>
+                    <b-button class="btnsalva" v-on:click="cadastrar()">Salvar</b-button>
                 </b-field> 
                 </div>
-            </section>    
-
-
-                <b-field label="Name" class="name">
-                    <b-input value=""></b-input>
+            </section>
+                
+                <b-field label="Nome" class="name">
+                    <b-input type="text" placeholder="Seu nome"></b-input>
                 </b-field>
         
-                <b-field label="Email"
-                    type="is-danger"
-                    message="This email is invalid" class="email">
-                    <b-input type="email"
-                        value=""
-                        maxlength="30">
+                <b-field label="Email" class="email">
+                    <b-input type="email" placeholder="email@exemplo.com" maxlength="30">
                     </b-input>
                 </b-field>
            
-                <b-field label="Password"
-                    type="is-warning"
-                    :message="['Password is too short', 'Password must have at least 8 characters']" class="pass">
-                    <b-input value="" type="password" maxlength="30"></b-input>
+                <b-field label="Password" class="pass">
+                    <b-input type="password" placeholder="sua senha" maxlength="30"></b-input>
                 </b-field>
                 
-                <b-field label="Password"
-                    type="is-warning"
-                    :message="['Password is too short', 'Password must have at least 8 characters']" class="pass">
-                    <b-input value="" type="password" maxlength="30"></b-input>
+                <b-field label="Password" class="pass">
+                    <b-input type="password" placeholder="sua senha" maxlength="30"></b-input>
                 </b-field>
 
                 <b-field label="seu CPF" class="cpf">
-                    <b-input placeholder="Number"
+                    <b-input placeholder="Seu CPF"
                         type="number"
                         min="10"
                         max="20">
@@ -84,21 +77,23 @@
                 </b-field>
         
                 <b-field label="Subject">
-                    <b-select placeholder="Select a subject">
+                    <b-select placeholder="Selecione um cagro">
                         <option value="1">Super-Admin</option>
                         <option value="2">Outro cargo</option>
                     </b-select>
                 </b-field>
-            </div>
+        </div>
 
 </div>    
 
-    <script src="https://unpkg.com/vue"></script>
-    <!-- Full bundle -->
-    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<!-- Full bundle -->
+<script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
 
-    <!-- Individual components -->
-    <script src="https://unpkg.com/buefy/dist/components/table"></script>
+<!-- Individual components -->
+<script src="https://unpkg.com/buefy/dist/components/table"></script>
+<script src="https://unpkg.com/buefy/dist/components/input"></script>
+
     <script>
         new Vue({
             el: '#app'
