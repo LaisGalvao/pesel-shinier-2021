@@ -4,12 +4,24 @@
     height: 100vh;
 }
 
+.menu-list{
+    margin-top: 50px;
+}
+
 .fas{
     color: #fff;
 }
 
 .navbar{
     background-color: #050a0c;
+}
+
+.search{
+    margin-top: 20px;
+}
+
+li{
+    margin-top: 30px;
 }
 
 a:hover{
@@ -28,16 +40,19 @@ body{
     display: inline-flex;
 }
 
+.title{
+    color: snow;
+}
 
 .container{
     width: 90%;
     height: 90vh;
     border-radius: 12px;
     margin-left: 16%;
-    margin-top: -590px;
+    margin-top: -600px;
     flex-direction: column;
     position:absolute;
-    background-color:#07000f;
+    background-color:#14141f;
 }
 
 b-field{
@@ -46,6 +61,7 @@ b-field{
 
 .btnsalva{
     background-color: green;
+    color: snow;
     float: right;
     margin-top: -70px;
 }
