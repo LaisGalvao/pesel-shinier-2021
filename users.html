@@ -11,7 +11,8 @@
     <title>Document</title>
 </head>
 <body>
-<div id="app2" >
+
+<div id="app">
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <b-field>
             <img src="images/analytics.png" alt="Analytics" class="img-head">
@@ -38,7 +39,7 @@
                     Usuários
                 </p>
                 <b-field>  
-                    <button class="btnsalva"><a href="submit.html"> Novo usuário</a></button>
+                    <b-button class="btnsalva"><a href="submit.html" class="salva">Novo usuário</a></b-button>
                 </b-field> 
                 </div>
             </section>
@@ -46,7 +47,6 @@
             <template>
                 <b-table :data="data" :columns="columns"></b-table>
             </template>
-           
         </div>
 
 </div>    
