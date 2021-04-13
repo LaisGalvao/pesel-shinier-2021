@@ -88,30 +88,43 @@ var app = new Vue({
 
 })
 
-var obj = new Vue({
-    data:{
-        users:[
-            {
-                name: '',
-                email: '',
-                pass: '',
-                repeatPass: '',
-                cpf: '',
-                tel: '',
-                cargo: 2  
-            }
-        ]
-       
-    }
-})
-
 //card que retorna os users cadastrados
 var app2 = new Vue({
     el: '#app2',
-    template: `<ul>
-                <li v-for="x in users">
-                </li>
-            </ul>`
+
+    data:{
+        users: [
+                    {
+                        name: '',
+                        email: '',
+                        pass: '',
+                        repeatPass: '',
+                        cpf: '',
+                        tel: '',
+                        cargo: 2  
+                    }
+                ], columns: [
+        
+                    {
+                        field: 'name',
+                        label: 'Nome',
+                    },
+                    {
+                        field: 'email',
+                        label: 'Email',
+                    },
+                    {
+                        field: 'cpf',
+                        label: 'CPF',
+                    },
+                    {
+                        field: 'tel',
+                        label: 'Telefone',
+                    }
+                ]
+            
+        },
+                  
 })
 
 //botão de cadastrar novo
