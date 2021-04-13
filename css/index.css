@@ -24,6 +24,7 @@
 .search{
     width: 80vh;
     padding: 30px;
+    background-color: #050a0c;
 }
 
 li{
@@ -64,6 +65,24 @@ body{
     float: right;
     margin-top: -70px;
     margin-right: 220px;
+}
+
+.salva{
+    text-decoration: none;
+}
+.salva:visited{
+    color: snow;
+}
+
+.card{
+    width: 50%;
+    height: 4rem;
+    margin-left: 26%;
+    padding-left: 2rem;
+    margin-top: -620px;
+    background-color:#363636;
+    color: snow;
+    position: absolute;
 }
 
 .name{
