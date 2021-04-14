@@ -4,12 +4,12 @@ var nav = new Vue({
     el:'#nav',
     template: `
             <nav class="navbar" role="navigation" aria-label="main navigation">
-            <b-field>
-                <img src="images/analytics.png" alt="Analytics" class="img-head">
-                <b-input placeholder="Buscar funcionalidade.." 
-                class="search"></b-input>
-            </b-field>
-        </nav>`
+                <b-field>
+                    <img src="images/analytics.png" alt="Analytics" class="img-head">
+                    <b-input placeholder="Buscar funcionalidade.." 
+                    class="search"></b-input>
+                </b-field>
+            </nav>`
 })
 
 
@@ -18,14 +18,15 @@ var menuapp = new Vue({
     el:'#menu',
     template: `<aside class="menu">
         
-    <ul class="menu-list">
-      <li><a><i class="fas fa-home"></i> Dashboard</a></li>
-      <li><a><i class="fas fa-users"></i> Grupos</a></li>
-      <li><a href="users.html"><i class="fas fa-user"></i> Usuários</a></li>
-      <li><a><i class="fas fa-atom"></i> Sistemas</a></li>
-      <li><a><i class="fas fa-sitemap"></i> Categoria</a></li>
-    </ul>
-</aside>`
+            <ul class="menu-list">
+            <li><a><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a><i class="fas fa-users"></i> Grupos</a></li>
+            <li><a href="users.html"><i class="fas fa-user"></i> Usuários</a></li>
+            <li><a><i class="fas fa-atom"></i> Sistemas</a></li>
+            <li><a><i class="fas fa-sitemap"></i> Categoria</a></li>
+            </ul>
+
+        </aside>`
 })
 
 //container com form de cadastro
@@ -58,7 +59,8 @@ var app = new Vue({
                     </b-field>
                     
                     <b-field label="Password" class="pass">
-                        <b-input type="password" placeholder="sua senha" maxlength="30" v-model="repeatPass"></b-input>
+                        <b-input type="password" placeholder="sua senha" maxlength="30" v-model="repeatPass">
+                        </b-input>
                     </b-field>
 
                     <b-field label="seu CPF" class="cpf">
@@ -83,122 +85,80 @@ var app = new Vue({
                             <option value="2">Outro cargo</option>
                         </b-select>
                     </b-field>
-           
-            
-            
-            <div class="box" v-for="">
-            <article class="media">
-            <div class="media-left">
-                <!--<figure class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-                </figure>-->
-            </div>
-            <div class="media-content">
-                <div class="content">
-                <p>
-                    <strong>{{name}}</strong> <small>{{email}}</small> <small>{{tel}}</small>
-                </p>
-                </div>
-            </div>
-            </article>
-        </div>
-        
-        
+
         </div>`,
-
             
-        data:{
-            name: null,
-            email: null,
-            pass: null,
-            repeatPass: null,
-            cpf: '',
-            tel: '',
-            cargo: [ 'Super-Admin', 'Outro cargo'] 
-        },  
-            //abaixo segui o exemplo de localStorage
-            //da própria documentação do Vue
-            mounted() {
-                if (localStorage.name) {
-                    this.name = localStorage.name;
-                  }
-                  if (localStorage.email) {
-                    this.email = localStorage.email;
-                  }
-                  if (localStorage.pass) {
-                    this.pass = localStorage.pass;
-                  }
-                  if (localStorage.cpf) {
-                    this.cpf = localStorage.cpf;
-                  }
-                  if (localStorage.tel) {
-                    this.tel = localStorage.tel;
-                  }
-            },
-            methods: {
-                salvar: function(){
-                  localStorage.name = this.name;    
-                  localStorage.email = this.email;
-                  localStorage.pass = this.pass;
-                  localStorage.cpf = this.cpf;
-                  localStorage.tel = this.tel;
-                }
+        data () {
+            return {
+              users: [
+                  {name: ''},
+                  {email: ''},
+                  {pass: ''},
+                  {cpf: ''},
+                  {tel: ''}
+              ],
+              newUser: ''
+            }
+          },
+          mounted () {
+            if(localStorage.users.name){
+               localStorage.setItem(users.name)
+            }
+            if(localStorage.users.email){
+                localStorage.setItem(users.email)
+            }
+            if(localStorage.users.pass){
+                localStorage.setItem(users.pass)
+            }
+            if(localStorage.users.cpf){
+                localStorage.setItem(users.cpf)
+            }
+            if(localStorage.users.tel){
+                localStorage.setItem(users.tel)
+            }
+            
+          },
+          methods: {
+            
+            salvar: function(){
 
-                
-            },
+            }
+              
+          }
 
 
 })
 
 //card que retorna os users cadastrados
-/*var app2 = new Vue({
+ var app2 = new Vue({
     extends: app,
     el: '#app2',
-    template:`
-            <div class="box" v-for="data in localStorage">
-            <article class="media">
-            <div class="media-left">
-                <!--<figure class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-                </figure>-->
-            </div>
-            <div class="media-content">
-                <div class="content">
-                <p>
-                    <strong>{{name}}</strong> <small>{{email}}</small> <small>{{tel}}</small>
-                </p>
+                template:`      
+            <div class="box">
+                <article class="media">
+                <div class="media-left">
+                    <!--<figure class="image is-64x64">
+                    <img src="" alt="Image">
+                    </figure>-->
                 </div>
+                <div class="media-content">
+                    <div class="content">
+                    <p>
+                        <strong></strong> <small></small> <small></small>
+                    </p>
+                    </div>
+                </div>
+                </article>
             </div>
-            </article>
-        </div>`,
-    methods:{
-        save: function(){
-            if(!this.localStorage){
-                return;
+            `,
+          mounted() {
+            
+            },
+            methods: {
             }
-
-            localStorage.getItem.name = this.name;  
-            localStorage.name.push(this.name);
-
-            localStorage.getItem.email = this.email;
-            localStorage.email.push(this.email);
-
-            localStorage.getItem.pass = this.pass;
-            localStorage.pass.push(this.pass);
-
-            localStorage.getItem.cpf = this.cpf;
-            localStorage.cpf.push(this.cpf);
-
-            localStorage.getItem.tel = this.tel;
-            localStorage.tel.push(this.tel);
-
-            this.salvar();
-
-          }
-    }
    
            
-})*/
+}) 
 
 //botão de cadastrar novo
 var cadnovo = new Vue({
