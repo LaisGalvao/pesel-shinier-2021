@@ -74,15 +74,20 @@ body{
     color: snow;
 }
 
-.card{
-    width: 50%;
-    height: 4rem;
-    margin-left: 26%;
-    padding-left: 2rem;
-    margin-top: -620px;
-    background-color:#363636;
+.media{
     color: snow;
-    position: absolute;
+    position: relative;
+    background-color:#b9b9b9;
+}
+
+.box{
+    width: 60%;
+    height: 10rem;
+    margin-left: 20%;
+    padding-left: 2rem;
+    /*margin-top: -620px;*/
+    background-color:#b9b9b9;
+    position: relative;
 }
 
 .name{

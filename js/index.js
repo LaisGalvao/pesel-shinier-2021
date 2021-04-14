@@ -83,49 +83,122 @@ var app = new Vue({
                             <option value="2">Outro cargo</option>
                         </b-select>
                     </b-field>
-            </div>`
+           
+            
+            
+            <div class="box" v-for="">
+            <article class="media">
+            <div class="media-left">
+                <!--<figure class="image is-64x64">
+                <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                </figure>-->
+            </div>
+            <div class="media-content">
+                <div class="content">
+                <p>
+                    <strong>{{name}}</strong> <small>{{email}}</small> <small>{{tel}}</small>
+                </p>
+                </div>
+            </div>
+            </article>
+        </div>
+        
+        
+        </div>`,
+
+            
+        data:{
+            name: null,
+            email: null,
+            pass: null,
+            repeatPass: null,
+            cpf: '',
+            tel: '',
+            cargo: [ 'Super-Admin', 'Outro cargo'] 
+        },  
+            //abaixo segui o exemplo de localStorage
+            //da própria documentação do Vue
+            mounted() {
+                if (localStorage.name) {
+                    this.name = localStorage.name;
+                  }
+                  if (localStorage.email) {
+                    this.email = localStorage.email;
+                  }
+                  if (localStorage.pass) {
+                    this.pass = localStorage.pass;
+                  }
+                  if (localStorage.cpf) {
+                    this.cpf = localStorage.cpf;
+                  }
+                  if (localStorage.tel) {
+                    this.tel = localStorage.tel;
+                  }
+            },
+            methods: {
+                salvar: function(){
+                  localStorage.name = this.name;    
+                  localStorage.email = this.email;
+                  localStorage.pass = this.pass;
+                  localStorage.cpf = this.cpf;
+                  localStorage.tel = this.tel;
+                }
+
+                
+            },
 
 
 })
 
 //card que retorna os users cadastrados
-var app2 = new Vue({
+/*var app2 = new Vue({
+    extends: app,
     el: '#app2',
+    template:`
+            <div class="box" v-for="data in localStorage">
+            <article class="media">
+            <div class="media-left">
+                <!--<figure class="image is-64x64">
+                <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                </figure>-->
+            </div>
+            <div class="media-content">
+                <div class="content">
+                <p>
+                    <strong>{{name}}</strong> <small>{{email}}</small> <small>{{tel}}</small>
+                </p>
+                </div>
+            </div>
+            </article>
+        </div>`,
+    methods:{
+        save: function(){
+            if(!this.localStorage){
+                return;
+            }
 
-    data:{
-        users: [
-                    {
-                        name: '',
-                        email: '',
-                        pass: '',
-                        repeatPass: '',
-                        cpf: '',
-                        tel: '',
-                        cargo: 2  
-                    }
-                ], columns: [
-        
-                    {
-                        field: 'name',
-                        label: 'Nome',
-                    },
-                    {
-                        field: 'email',
-                        label: 'Email',
-                    },
-                    {
-                        field: 'cpf',
-                        label: 'CPF',
-                    },
-                    {
-                        field: 'tel',
-                        label: 'Telefone',
-                    }
-                ]
-            
-        },
-                  
-})
+            localStorage.getItem.name = this.name;  
+            localStorage.name.push(this.name);
+
+            localStorage.getItem.email = this.email;
+            localStorage.email.push(this.email);
+
+            localStorage.getItem.pass = this.pass;
+            localStorage.pass.push(this.pass);
+
+            localStorage.getItem.cpf = this.cpf;
+            localStorage.cpf.push(this.cpf);
+
+            localStorage.getItem.tel = this.tel;
+            localStorage.tel.push(this.tel);
+
+            this.salvar();
+
+          }
+    }
+   
+           
+})*/
 
 //botão de cadastrar novo
 var cadnovo = new Vue({
@@ -140,5 +213,6 @@ var cadnovo = new Vue({
                     <b-button class="btnsalva"><a href="submit.html" class="salva">Novo usuário</a></b-button>
                 </b-field> 
                 </div>
-        </section>`
+        </section>
+        </div>`
 })
