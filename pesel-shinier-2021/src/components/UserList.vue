@@ -26,7 +26,7 @@
         </li>
       </ul>
     </aside>
-    <!--<UserForm v-on:add-user="add"></UserForm>-->
+
     <section class="hero">
       <div class="hero-body">
         <p class="title">Usuários</p>
@@ -191,7 +191,6 @@ body {
 }
 </style>
 <script>
-import UserForm from "./UserForm";
 export default {
   data() {
     return {

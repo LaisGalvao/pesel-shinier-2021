@@ -26,14 +26,14 @@
         </li>
       </ul>
     </aside>
-    <UserList />
+    <!--<UserList />-->
   </div>
 </template>
 <script>
-import UserList from "../components/UserList.vue";
+//import UserList from "../components/UserList.vue";
 export default {
-  name: "home",
-  components: UserList,
+  name: "Home",
+  //components: UserList,
 };
 </script>
 <style>
