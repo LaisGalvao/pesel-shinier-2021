@@ -180,6 +180,7 @@ body {
 }
 </style>
 <script>
+import UserList from "./UserList.vue";
 export default {
   data() {
     return {
@@ -210,6 +211,14 @@ export default {
       this.cpf = "";
       this.tel = "";
     },
+    const: (router = new VueRouter({
+      routes: [
+        {
+          path: "/components",
+          component: UserList,
+        },
+      ],
+    })),
   },
 };
 </script>

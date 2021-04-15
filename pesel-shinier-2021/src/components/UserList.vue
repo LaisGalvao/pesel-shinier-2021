@@ -1,11 +1,37 @@
 <template>
   <div class="list-group">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <b-field>
+        <img src="../assets/analytics.png" alt="Analytics" class="img-head" />
+        <b-input placeholder="Buscar funcionalidade.." class="search"></b-input>
+      </b-field>
+    </nav>
+
+    <aside class="menu">
+      <ul class="menu-list">
+        <li>
+          <a><i class="fas fa-home"></i> Dashboard</a>
+        </li>
+        <li>
+          <a><i class="fas fa-users"></i> Grupos</a>
+        </li>
+        <li>
+          <a href=""><i class="fas fa-user"></i> Usuários</a>
+        </li>
+        <li>
+          <a><i class="fas fa-atom"></i> Sistemas</a>
+        </li>
+        <li>
+          <a><i class="fas fa-sitemap"></i> Categoria</a>
+        </li>
+      </ul>
+    </aside>
     <!--<UserForm v-on:add-user="add"></UserForm>-->
     <section class="hero">
       <div class="hero-body">
         <p class="title">Usuários</p>
         <b-field>
-          <b-button class="btnsalva"><a href="" class="salva">Novo usuário</a></b-button>
+          <b-button class="btnsalva">Novo usuário </b-button>
         </b-field>
       </div>
     </section>
@@ -167,16 +193,13 @@ body {
 <script>
 import UserForm from "./UserForm";
 export default {
-  components: {
-    UserForm,
-  },
   data() {
     return {
       users: [],
     };
   },
   methods: {
-    addUser(users) {
+    addUser(user) {
       this.users.push(user);
     },
     removeUser(index) {
@@ -189,11 +212,6 @@ export default {
         ...user,
         name: user.name.trim() === "" ? "Anônimo" : user.name,
       }));
-    },
-  },
-  watch: {
-    comments(val) {
-      console.log("val", val);
     },
   },
 };

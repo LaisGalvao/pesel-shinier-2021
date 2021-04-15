@@ -1,47 +1,20 @@
 <template>
-  <div>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <b-field>
-        <img src="./assets/analytics.png" alt="Analytics" class="img-head" />
-        <b-input placeholder="Buscar funcionalidade.." class="search"></b-input>
-      </b-field>
-    </nav>
-
-    <aside class="menu">
-      <ul class="menu-list">
-        <li>
-          <a><i class="fas fa-home"></i> Dashboard</a>
-        </li>
-        <li>
-          <a><i class="fas fa-users"></i> Grupos</a>
-        </li>
-        <li>
-          <a href=""><i class="fas fa-user"></i> Usuários</a>
-        </li>
-        <li>
-          <a><i class="fas fa-atom"></i> Sistemas</a>
-        </li>
-        <li>
-          <a><i class="fas fa-sitemap"></i> Categoria</a>
-        </li>
-      </ul>
-    </aside>
-    <UserList />
+  <div id="app">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import UserList from "./components/UserList";
 import Vue from "vue";
 import Buefy from "buefy";
 import "buefy/dist/buefy.css";
-
+import router from "vue-router";
+import UserList from "./components/UserList";
 Vue.use(Buefy);
 export default {
+  router,
   name: "app",
-  components: {
-    UserList,
-  },
+  components: UserList,
 };
 </script>
 
