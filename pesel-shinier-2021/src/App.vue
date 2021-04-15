@@ -1,5 +1,5 @@
 <template>
-  <Comments />
+  <UserList />
 </template>
 
 <script>
