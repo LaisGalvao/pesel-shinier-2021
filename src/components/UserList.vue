@@ -1,12 +1,5 @@
 <template>
   <div>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <b-field>
-        <img src="../assets/analytics.png" alt="Analytics" class="img-head" />
-        <b-input placeholder="Buscar funcionalidade.." class="search"></b-input>
-      </b-field>
-    </nav>
-
     <aside class="menu">
       <ul class="menu-list">
         <li>
@@ -76,14 +69,9 @@ export default {
     };
   },
   methods: {
+    /* eslint-disable */
     addUser() {
       this.users.push(user);
-      console.log(
-        "recebi",
-        JSON.parse({
-          name: this.users.name,
-        })
-      );
     },
     removeUser(index) {
       this.users.splice(index, 1);
@@ -202,6 +190,7 @@ body {
   padding-left: 2rem;
   margin-top: -620px;
   background-color: #363636;
+  border-radius: 12px;
   position: relative;
 }
 </style>

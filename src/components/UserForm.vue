@@ -1,12 +1,5 @@
 <template>
   <div>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <b-field>
-        <img src="../assets/analytics.png" alt="Analytics" class="img-head" />
-        <b-input placeholder="Buscar funcionalidade.." class="search"></b-input>
-      </b-field>
-    </nav>
-
     <aside class="menu">
       <ul class="menu-list">
         <li>
@@ -102,26 +95,27 @@ export default {
       if (this.name.trim() === "" || this.email.trim() === "") {
         return;
       }
-
-      JSON.stringify(
-        this.$emit("addusers", {
-          name: this.name,
-          email: this.email,
-          pass: this.pass,
-          cpf: this.cpf,
-          tel: this.tel,
-        }),
+      /* eslint-disable */
+      //aqui tentei usar um event emmiter
+      this.$emit("addusers", {
+        name: this.name,
+        email: this.email,
+        pass: this.pass,
+        cpf: this.cpf,
+        tel: this.tel,
+      }),
         //testando se ele pega os dados dos inputs
-        console.log({
-          name: this.name,
-          email: this.email,
-          pass: this.pass,
-          cpf: this.cpf,
-          tel: this.tel,
-        })
-      );
-
-      this.name = "";
+        JSON.stringify(
+          console.log({
+            name: this.name,
+            email: this.email,
+            pass: this.pass,
+            cpf: this.cpf,
+            tel: this.tel,
+          })
+        ),
+        //aqui ele limpa os campos após clicar no Salvar
+        (this.name = "");
       this.email = "";
       this.pass = "";
       this.cpf = "";
